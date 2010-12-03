@@ -2,9 +2,8 @@
 
 class Model_Navmap extends Model_Navigation_Navmap
 {
-	protected $_belogs_to = array(
-		'navleaf' => array(),
-		'navtree' => array(),
-	);
+
+	// You can override this to extend the default navigation map pivot.
+
 }
 
