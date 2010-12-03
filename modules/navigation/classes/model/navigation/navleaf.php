@@ -12,7 +12,7 @@ class Model_Navigation_Navleaf extends ORM
 	);
 
 		// A navigation tree is composed of many leaves, and
-		// a navigation item has a 'parent' navigation item
+		// a navigation leaf has a 'parent' navigation leaf
 	protected $_has_many = array(
 		'navtrees' => array(
 			'through' => 'navmap',
