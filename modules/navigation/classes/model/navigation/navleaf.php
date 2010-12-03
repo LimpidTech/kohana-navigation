@@ -16,11 +16,20 @@ class Model_Navigation_Navleaf extends ORM
 	protected $_has_many = array(
 		'navtrees' => array(
 			'through' => 'navmap',
-			'foreign_key' => 'navtree_id',
+			'far_key' => 'navtree_id',
 		),
-		'navleaves' => array(
-			'foreign_key' => 'parent',
+		'leaves' => array(
+			'model' => 'navleaf',
+			'foreign_key' => 'parent_id',
 		)
 	);
+
+	public function get_destination()
+	{
+			// TODO: Modify this to more intelligently decide what sort of
+			//       destination we have been given.
+
+		return $this->destination;
+	}
 }
 

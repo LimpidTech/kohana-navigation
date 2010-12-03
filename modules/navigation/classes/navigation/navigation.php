@@ -3,15 +3,20 @@
 class Navigation_Navigation
 {
 
-	static public function generate($access_key)
+	static public function get($identifier, $access_key = true)
 	{
-		$tree = ORM::factory('navtree', array('access_key' => $access_key))->find();
+		if ($access_key)
+			$parent = ORM::factory('navtree', array('access_key' => $identifier))->find();
+		else
+			$parent = $identifier;
 
-		if (!$tree->loaded())
-			throw new Kohana_Exception('A tree with access_key "' . $access_key . '" does not exist.');
+		if ($access_key && !$parent->loaded())
+				throw new Kohana_Exception('A navigation tree with access_key "' . $identifier . '" could not be found.');
 
-		foreach ($tree->navleaves->find_all() as $leaf)
-			print_r($leaf);
+		$leaves = $parent->leaves->find_all();
+
+		if (count($leaves) > 0)
+			return View::factory('navigation/leaves')->set('leaves', $leaves);
 	}
 
 }

@@ -1,10 +1,12 @@
 INSERT INTO `navtrees` (`name`, `access_key`) VALUES ('Primary', 'primary');
 
-INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'Dashboard', '/dashboard/');
-INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'Friends', '/friends/');
-INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'View profile', '/profile/');
-INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'Edit account', '/account/');
-INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'Chat', '/chat/');
+INSERT INTO `navleaves` (`label`, `destination`) VALUES ('Dashboard', '/dashboard/');
+INSERT INTO `navleaves` (`label`, `destination`) VALUES ('Friends', '/friends/');
+INSERT INTO `navleaves` (`label`, `destination`) VALUES ('View profile', '/profile/');
+INSERT INTO `navleaves` (`label`, `destination`) VALUES ('Edit account', '/account/');
+INSERT INTO `navleaves` (`label`, `destination`) VALUES ('Chat', '/chat/');
+
+INSERT INTO `navleaves` (`parent_id`, `label`, `destination`, `title`) VALUES (1, 'Submenu', '/submenu/', 'This is a submenu.');
 
 INSERT INTO `navmap` (navtree_id, navleaf_id) VALUES (1, 1);
 INSERT INTO `navmap` (navtree_id, navleaf_id) VALUES (1, 2);
