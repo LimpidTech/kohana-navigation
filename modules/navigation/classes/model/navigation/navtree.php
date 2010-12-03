@@ -8,7 +8,7 @@ class Model_Navigation_Navtree extends ORM
 		'navleaves' => array(
 			'model'   => 'navleaf',
 			'through' => 'navmap',
-			'foreign_key' => 'navleaf_id',
+			'far_key' => 'navleaf_id',
 		),
 	);
 
