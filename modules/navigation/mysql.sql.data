@@ -1,0 +1,14 @@
+INSERT INTO `navtrees` (`name`, `access_key`) VALUES ('Primary', 'primary');
+
+INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'Dashboard', '/dashboard/');
+INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'Friends', '/friends/');
+INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'View profile', '/profile/');
+INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'Edit account', '/account/');
+INSERT INTO `navleaves` (`parent_id`, `label`, `destination`) VALUES (1, 'Chat', '/chat/');
+
+INSERT INTO `navmap` (navtree_id, navleaf_id) VALUES (1, 1);
+INSERT INTO `navmap` (navtree_id, navleaf_id) VALUES (1, 2);
+INSERT INTO `navmap` (navtree_id, navleaf_id) VALUES (1, 3);
+INSERT INTO `navmap` (navtree_id, navleaf_id) VALUES (1, 4);
+INSERT INTO `navmap` (navtree_id, navleaf_id) VALUES (1, 5);
+
