@@ -24,12 +24,20 @@ class Model_Navigation_Navleaf extends ORM
 		)
 	);
 
+	// TODO: Modify these to more intelligently decide what sort of
+	//       destination we have been given.
+
 	public function get_destination()
 	{
-			// TODO: Modify this to more intelligently decide what sort of
-			//       destination we have been given.
-
 		return $this->destination;
+	}
+
+	public function is_active()
+	{
+		if ($_SERVER['REQUEST_URI'] == $this->destination)
+			return true;
+
+		return false;
 	}
 }
 
